@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+
+
+.example::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide Scrollbar for Webkit Browsers */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for Chrome, Safari, Edge */
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
+    scrollbar-width: none;     /* Hides scrollbar for Firefox */
+  }
+  
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track background */
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #4A90E2; /* Scrollbar thumb color */
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+  
+  .scrollbar-thin:hover::-webkit-scrollbar-thumb {
+    background-color: #007ACE; /* Darken on hover */
+  }
+  
