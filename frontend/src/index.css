@@ -44,4 +44,18 @@ html {
   .scrollbar-thin:hover::-webkit-scrollbar-thumb {
     background-color: #007ACE; /* Darken on hover */
   }
+
+
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-animation {
+    animation: rotate 1s linear infinite; /* Adjust duration and timing function as needed */
+}
   
