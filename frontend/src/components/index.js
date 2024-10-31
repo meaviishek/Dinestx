@@ -8,7 +8,7 @@ import Works from "./Works";
 import Joinus from "./Joinus";
 import Logo from '../assets/180X180 D.png'
 import Floating from "./Floating";
-
+import Terminal from "./terminal";
 export{
-    Header,Footer,Joinus,Blogs,Home,About,Services,Works,Logo,Floating
+    Header,Footer,Joinus,Blogs,Home,About,Services,Works,Logo,Floating, Terminal
 }
