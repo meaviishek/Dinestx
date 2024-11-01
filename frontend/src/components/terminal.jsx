@@ -6,34 +6,66 @@ const Terminal = () => {
     const [inputUser, setInputUser] = useState('');
     const [output, setOutput] = useState([]);
     const [loading, setLoading] = useState(false);
-    const scrollRef = useRef(null); // Ref for auto-scrolling
+    const [awaitingConfirmation, setAwaitingConfirmation] = useState(false); // State for confirmation prompt
+    const scrollRef = useRef(null);
 
     const InputItem = [
         { 
-            input: "help", 
+            input: "--h", 
+            description: "Usage: --ca to create your account. Don't use [] bracket",
             output: [
                 {
-                    "Create Account": "Show help documentation",
-                    "Delete Account": "Show help documentation",
-                    "Update Profile": "Show help documentation",
+                    
+                    "[--ca]": "Create your Dinestx Account" ,
+                    "[--da]": "Delete your Account",
+                    "[--up]": "Update Profile",
+                    "[--s]": "Services",
+                    "[--cu]": "Contact Us",
                 }
             ]
         },
-        { input: "Create Account", description: " ", route: "/" },
-        { input: "Delete Account", description: "Learn more about us", route: "/about" },
-        { input: "Service", description: "Learn more about us", route: "/about" },
-        { input: "Contact", description: "Learn more about us", route: "/about" }
+        { input: "--ca", description: "", route: "/" },
+        { input: "--da", description: "Learn more about us", route: "/about" },
+        { input: "--s", description: "Service", route: "/about" },
+        { input: "--cu", description: "Contact Us", route: "/about" },
+        { input: "Clear", description: "" }
     ];
 
     const handleUserInput = () => {
+        if (awaitingConfirmation) {
+            if (inputUser === "y"||"Y") {
+                setOutput(prevOutput => [...prevOutput, "Wait for a while... We are creating your account"]);
+                setLoading(true);
+                setTimeout(() => {
+                    setLoading(false);
+                    navigate(InputItem.find(item => item.input === "Create Account").route);
+                }, 1500);
+            } else if (inputUser.toLowerCase() === "n") {
+                setOutput(prevOutput => [...prevOutput, "Account creation canceled."]);
+            } else {
+                setOutput(prevOutput => [...prevOutput, "Invalid input. Please type 'Y' or 'N'."]);
+                return;
+            }
+            setAwaitingConfirmation(false);
+            setInputUser("");
+            return;
+        }
+
         const matchedItem = InputItem.find(item => item.input.toLowerCase() === inputUser.toLowerCase());
 
         if (matchedItem) {
-            if (matchedItem.input === "help") {
-                const helpOutput = matchedItem.output.map(item => 
-                    Object.entries(item).map(([command, description]) => `${command}: ${description}`)
-                ).flat();
-                setOutput(prevOutput => [...prevOutput, `$ ${inputUser}`, ...helpOutput]);
+            if (matchedItem.input === "--h") {
+                const helpOutput = matchedItem.output
+                    .map(item => Object.entries(item).map(([command, description]) => `${command}: ${description}`))
+                    .flat();
+                setOutput(prevOutput => [...prevOutput, `$ ${inputUser}`, matchedItem.description, ...helpOutput]);
+            } else if (matchedItem.input === "--ca") {
+                setOutput(prevOutput => [...prevOutput, `$ ${inputUser}`, matchedItem.description]);
+                setAwaitingConfirmation(true);
+            } else if (matchedItem.input === "") {
+
+            } else if (matchedItem.input === "Clear") {
+                setOutput([]);
             } else {
                 setLoading(true);
                 setOutput(prevOutput => [...prevOutput, `$ ${inputUser}`, `Navigating to ${matchedItem.description}`]);
@@ -55,7 +87,6 @@ const Terminal = () => {
     };
 
     useEffect(() => {
-        // Wrap scrolling logic in a timeout to ensure output has fully updated
         setTimeout(() => {
             if (scrollRef.current) {
                 scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -74,16 +105,16 @@ const Terminal = () => {
                                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
                                 <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
                             </div>
-                            <p className="text-green-400 flex gap-3">@Dinestx</p>
+                            <p className="text-green-400 flex gap-3">Dinestx</p>
                         </div>
                         <p className="text-sm">bash</p>
                     </div>
                 </div>
                 <div 
-                    className="bg-gray-800/25 p-6 rounded-b-3xl space-y-1 h-[250px] overflow-y-auto hide-scrollbar" 
-                    ref={scrollRef} // Ref for auto-scrolling
+                    className="bg-gray-900 p-6 rounded-b-3xl space-y-1 h-[400px] overflow-y-auto hide-scrollbar" 
+                    ref={scrollRef}
                 >
-                    <p className="text-green-400 flex gap-3">@Dinestx<span className='text-gray-300'>--help</span></p>
+                    <p className="text-green-400 flex gap-3">@Dinestx<span className='text-gray-300'>-h for help</span></p>
                     {output.map((line, index) => (
                         <p key={index} className="text-white">{line}</p>
                     ))}
@@ -93,12 +124,26 @@ const Terminal = () => {
                     )}
                     <div className='flex items-center gap-1.5'>
                         <p className="text-green-400">$ Dinestx ~ </p>
-                        <input
-                            className='bg-transparent border-none outline-none text-blue-500 focus:outline-none'
-                            value={inputUser}
-                            onChange={(e) => setInputUser(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                        />
+                        {awaitingConfirmation ? (
+                            <div className=''>
+                                <p className="text-white inline">Do you want to use Terminal (Y/N): </p>
+                                <input
+                                    className='bg-transparent border-none outline-none text-blue-500 focus:outline-none inline w-14'
+                                    value={inputUser}
+                                    onChange={(e) => setInputUser(e.target.value)}
+                                    onKeyPress={handleKeyPress}
+                                    autoFocus
+                                />
+                            </div>
+                        ) : (
+                            <input
+                                className='bg-transparent border-none outline-none text-blue-500 focus:outline-none'
+                                value={inputUser}
+                                onChange={(e) => setInputUser(e.target.value)}
+                                onKeyPress={handleKeyPress}
+                                autoFocus
+                            />
+                        )}
                     </div>
                 </div>
             </div>
