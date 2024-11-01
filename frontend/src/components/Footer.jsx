@@ -30,13 +30,13 @@ function Footer() {
     }
 ]
   return (
-    <div className=' mt-8  overflow-hidden  '>
+    <div className=' mt-0  overflow-hidden  '>
       <footer className="text-gray-400   max-w-screen mx-auto">
         {/* Discord Community */}
-        <div className="w-3/4 rounded-3xl lg:px-8 my-4 mx-auto bg-gray-200">
-          <div className='flex flex-row justify-between items-center text-left p-8'>
+        <div className="w-3/4 rounded-3xl lg:px-4 my-4 mx-auto bg-gray-200">
+          <div className='flex flex-col lg:flex-row justify-between items-center text-left p-8 gap-4'>
             <div className='flex flex-col text-left'>
-              <h5 className="mb-2 text-3xl font-bold text-gray-700">Join Our Community</h5>
+              <h5 className="mb-2 text-xl lg:text-3xl font-bold text-gray-700">Join Our Community</h5>
               <p className="mb-0 text-base text-gray-400 sm:text-lg">Stay up to date and move work forward with Dinestx.</p>
             </div>
             <div className="flex items-end">
@@ -66,7 +66,7 @@ function Footer() {
                 </div>
             </div>
             {/* Bottm Text */}
-            <div className=' text-center justify-center text-[350px] font-bold -mb-[180px] flex opacity-25 '>
+            <div className=' text-center justify-center text-[100px]    md:text-[200]  lg:text-[350px] font-bold lg:-mb-[180px] flex opacity-25 '>
               <div className='font-museo select-none'>dinestx</div>
             </div>
           </div>
