@@ -21,6 +21,7 @@ const Terminal = () => {
                     "[--up]": "Update Profile",
                     "[--s]": "Services",
                     "[--cu]": "Contact Us",
+                    "[clear]":"Clear All",
                 }
             ]
         },
@@ -95,8 +96,8 @@ const Terminal = () => {
     }, [output]);
 
     return (
-        <div className='justify-items-center my-36'>
-            <div className="text-white font-mono w-[600px]">
+        <div className='justify-items-center mt-16'>
+            <div className="text-white font-mono sm:w-[350px] md:w-[400px] lg:w-[600px]">
                 <div className='bg-gray-700 p-2 rounded-t-3xl'>
                     <div className="flex justify-between items-center mx-3">
                         <div className='flex items-center gap-3'>
@@ -114,7 +115,7 @@ const Terminal = () => {
                     className="bg-gray-900 p-6 rounded-b-3xl space-y-1 h-[400px] overflow-y-auto hide-scrollbar" 
                     ref={scrollRef}
                 >
-                    <p className="text-green-400 flex gap-3">@Dinestx<span className='text-gray-300'>-h for help</span></p>
+                    <p className="text-green-400 flex gap-3">@Dinestx<span className='text-gray-300'>--h for help</span></p>
                     {output.map((line, index) => (
                         <p key={index} className="text-white">{line}</p>
                     ))}

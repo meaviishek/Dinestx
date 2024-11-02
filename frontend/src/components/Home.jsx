@@ -56,48 +56,83 @@ function Home() {
     <div><div className="bg-white">
    
 
-    <div className="relative isolate px-6 pt-14 lg:px-8">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+    <div className="relative isolate px-6 pt-36 pb-36  lg:px-8">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+  <svg
+    className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-400 animate-pattern-light [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+    aria-hidden="true"
+  >
+    <defs>
+      <pattern
+        id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+        width="200"
+        height="200"
+        x="50%"
+        y="-1"
+        patternUnits="userSpaceOnUse"
       >
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#dd86ff] to-[#1203e4] opacity-50 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        />
-      </div>
-      <section className=" mx-auto max-w-screen-xl pb-4 px items-center lg:flex md:px-8">
-                <div className="space-y-4 flex-1 sm:text-center lg:text-left">
-                    <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
-                        Optimize your website for
-                         <span className="text-indigo-600"> Search engine</span>
-                    </h1>
-                    <p className="text-gray-500 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
-                    </p>
-                    <div>
-                        <p className="text-gray-800 py-3">
-                            Subscribe to our newsletter and we'll save your time
-                        </p>
-                        <form className="items-center space-y-3 sm:justify-center sm:space-x-3 sm:space-y-0 sm:flex lg:justify-start">
-                            <input
-                                type="text"
-                                placeholder="Enter your email"
-                                className="text-gray-500 border outline-none p-3 rounded-md w-full sm:w-72"
-                            />
-                            <button className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
-                                Subscribe 
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div className="flex-1 mt-4 lg:mt-0 lg:ml-3">
-                    <Terminal/>
-                </div>
-            </section>
+        <path d="M100 200V.5M.5 .5H200" fill="none" className="animate-pattern-opacity" />
+      </pattern>
+    </defs>
+    <svg x="50%" y="-1" className="overflow-visible fill-gray-50">
+      <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" strokeWidth="0" />
+    </svg>
+    <rect width="100%" height="100%" strokeWidth="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+  </svg>
+</div>
+   <div
+  aria-hidden="true"
+  className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
+>
+  <div
+    style={{
+      clipPath:
+        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 85.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 40.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+    }}
+    className="relative left-[calc(50%-30rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/3 rotate-[60deg] bg-gradient-to-tr from-[#ee87fc] to-[#1101e9] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] animate-gradient-pulse"
+  />
+</div>
+  <section className="mx-auto max-w-screen-xl pb-4 px items-center lg:flex md:px-8 relative">
+  <div className="space-y-4 flex-1 sm:text-center lg:text-left">
+    <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
+      Elevate Your Brand with
+      <span className="text-indigo-600"> Our Digital Solutions</span>
+    </h1>
+    <p className="text-gray-600 max-w-xl text-xl leading-relaxed sm:mx-auto lg:ml-0">
+      Your one-stop agency for Website and App Development, SEO, Graphic Design, and Social Media Management. Let us drive your digital success.
+    </p>
+
+    {/* Contact Button */}
+    <div className="mt-6">
+      <button className="outline-none bg-blue-700 text-white text-center px-4 py-3 rounded-xl shadow w-full hover:bg-blue-600 sm:w-auto">
+        Contact Us
+      </button>
+    </div>
+  </div>
+
+  {/* Terminal Component and Arrow */}
+  <div className="flex-1 mt-4 lg:mt-0 lg:ml-3 relative">
+    <Terminal />
+
+    {/* Arrow and Message */}
+    <div className="absolute -top-6 lg:top-8 right-0 lg:right-[-6rem] flex items-center space-x-2 transform -translate-x-8 -translate-y-4">
+      <p className="text-gray-500 text-xs lg:text-sm font-semibold bg-slate-50 py-2 px-3 rounded-lg shadow-xl border border-gray-300">
+        Control this website through this terminal
+      </p>
+      <svg
+        className="h-8 w-8 text-indigo-600 rotate-45"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 2a1 1 0 011 1v16.586l6.293-6.293a1 1 0 011.414 1.414l-8 8a1 1 0 01-1.414 0l-8-8a1 1 0 111.414-1.414L11 19.586V3a1 1 0 011-1z" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -165,49 +200,60 @@ function Home() {
 
 
         <div className="relative isolate overflow-hidden bg-gray-900 py-16 ">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="text-center">
-        <h2 className="text-base/7 font-semibold text-indigo-600">Services</h2>
-        <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-100 sm:text-6xl">
-         What We Do
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+  <div className="text-center">
+    <h2 className="text-base font-semibold text-indigo-600">Services</h2>
+    <p className="mt-2 text-5xl font-semibold tracking-tight text-gray-100 sm:text-6xl">
+      What We Do
+    </p>
+  </div>
+  <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-300 sm:text-xl">
+    From start to finish, we provide comprehensive solutions tailored to your unique requirements. Let us guide you on your journey to success.
+  </p>
+
+  <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 mt-16">
+
+    {/* Website & App Development */}
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
+      <div className="mb-12 space-y-4">
+        <h3 className="text-2xl font-semibold text-purple-900">Website & App Development</h3>
+        <p className="mb-6">
+          Build dynamic, responsive websites and mobile applications tailored to your needs. Our team ensures seamless functionality and optimal performance across all devices.
         </p>
+        <a href="#" className="block font-medium text-purple-600">Know more</a>
       </div>
-      <p className="mx-auto mt-4 max-w-2xl text-pretty text-center text-lg font-normal text-gray-300 sm:text-xl/8">
-      From start to finish, we provide comprehensive solutions tailored to your unique requirements. Let us guide you on your journey to success
-      </p>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 mt-16">
+      <img src="https://tailus.io/sources/blocks/end-image/preview/images/web-dev.svg" className="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" />
+    </div>
 
- 
-
-            <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8  hover:scale-105 transition-all duration-300">
-                <div className="mb-12 space-y-4">
-                    <h3 className="text-2xl font-semibold text-purple-900">Graphic Design</h3>
-                    <p className="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" className="block font-medium text-purple-600">Know more</a>
-                </div>
-                <img src="https://tailus.io/sources/blocks/end-image/preview/images/graphic.svg" className="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" width="900" height="600"/>
-            </div>
-            <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div className="mb-12 space-y-4">
-                    <h3 className="text-2xl font-semibold text-purple-900">UI Design</h3>
-                    <p className="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" className="block font-medium text-purple-600">Know more</a>
-                </div>
-                <img src="https://tailus.io/sources/blocks/end-image/preview/images/ui-design.svg" className="w-2/3 ml-auto" alt="illustration" loading="lazy" width="900" height="600"/>
-            </div>
-            <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div className="mb-12 space-y-4">
-                    <h3 className="text-2xl font-semibold text-purple-900">UX Design</h3>
-                    <p className="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" className="block font-medium text-purple-600">Know more</a>
-                </div>
-                <img src="https://tailus.io/sources/blocks/end-image/preview/images/ux-design.svg" className="w-2/3 ml-auto " alt="illustration" loading="lazy" width="900" height="600"/>
-            </div>
-       
-
-       
-        </div>
+    {/* Graphic Design */}
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
+      <div className="mb-12 space-y-4">
+        <h3 className="text-2xl font-semibold text-purple-900">Graphic Design</h3>
+        <p className="mb-6">
+          Elevate your brand with visually compelling graphics. From logos to marketing materials, we create designs that capture and communicate your brand identity effectively.
+        </p>
+        <a href="#" className="block font-medium text-purple-600">Know more</a>
       </div>
+      <img src="https://tailus.io/sources/blocks/end-image/preview/images/graphic.svg" className="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" />
+    </div>
+
+    {/* Social Media Management */}
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
+      <div className="mb-12 space-y-4">
+        <h3 className="text-2xl font-semibold text-purple-900">Social Media Management</h3>
+        <p className="mb-6">
+          Enhance your online presence with strategic social media management. We help you engage, grow, and build a loyal audience across all platforms.
+        </p>
+        <a href="#" className="block font-medium text-purple-600">Know more</a>
+      </div>
+      <img src="https://tailus.io/sources/blocks/end-image/preview/images/social-media.svg" className="w-2/3 ml-auto" alt="illustration" loading="lazy" />
+    </div>
+
+  </div>
+</div>
+
+
+
       <div aria-hidden="true" className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6">
         <div
           style={{
@@ -238,9 +284,9 @@ function Home() {
 
     <div className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+        <h2 className="text-center text-base/7 font-semibold text-indigo-600">Grow Faster</h2>
         <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-          Everything you need to deploy your app
+        Unlock Your Website's Full Potential        
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
@@ -248,10 +294,10 @@ function Home() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Mobile friendly
+                  Responsive Design
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                Ensuring a seamless experience across all devices, from mobile phones to desktop computers.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
@@ -270,9 +316,9 @@ function Home() {
             <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Performance</p>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">SEO Optimization</p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.
+                Boost your online visibility with targeted SEO strategies that drive more organic traffic.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -289,9 +335,9 @@ function Home() {
             <div className="absolute inset-px rounded-lg bg-white"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Security</p>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Admin Panel</p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.
+                Manage your content, users, and settings with ease through a user-friendly admin dashboard.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -309,10 +355,10 @@ function Home() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Powerful APIs
+                UI/UX Design
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.
+                Create a visually appealing and intuitive experience for users with our UI/UX design expertise.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">
@@ -362,29 +408,28 @@ function Home() {
     </svg>
     <div className=" mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 py-16">
     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pr-8 lg:pt-4">
-            <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-              <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                A better workflow
-              </p>
-              <p className="mt-6 text-lg/8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
-              </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                {/* {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
-                      <feature.icon aria-hidden="true" className="absolute left-1 top-1 h-5 w-5 text-indigo-600" />
-                      {feature.name}
-                    </dt>{' '}
-                    <dd className="inline">{feature.description}</dd>
-                  </div>
-                ))} */}
-              </dl>
-            </div>
-          </div>
+    <div className="lg:pr-8 lg:pt-4">
+  <div className="lg:max-w-lg">
+    <h2 className="text-base/7 font-semibold text-indigo-600">Dinestx</h2>
+    <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-300 sm:text-5xl">
+      About Us
+    </p>
+    <p className="mt-6 text-lg/8 text-gray-400">
+      We are a dynamic team of web development professionals committed to helping businesses succeed online. 
+      Our mission is to create high-performing, visually appealing, and user-friendly websites that enhance 
+      your brand’s digital presence. With a deep understanding of the latest web technologies and design trends, 
+      we ensure that each project meets our clients’ unique needs while maintaining top-notch quality.
+    </p>
+    <p className="mt-6 text-lg/8 text-gray-400">
+      From concept to launch, we prioritize collaboration, innovation, and functionality to deliver products 
+      that not only look good but perform excellently across all devices. We specialize in SEO, customized 
+      design, user experience optimization, and admin panels tailored to empower you with complete control 
+      over your digital platforms.
+    </p>
+   
+  </div>
+</div>
+
           <img
             alt="Product screenshot"
             src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
