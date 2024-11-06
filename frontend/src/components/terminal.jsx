@@ -27,7 +27,7 @@ const Terminal = () => {
         },
         { input: "--ca", description: "", route: "/" },
         { input: "--da", description: "Learn more about us", route: "/about" },
-        { input: "--s", description: "Service", route: "/about" },
+        { input: "--s", description: "Service", route: "/services" },
         { input: "--cu", description: "Contact Us", route: "/about" },
         { input: "Clear", description: "" }
     ];

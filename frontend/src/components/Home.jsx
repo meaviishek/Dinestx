@@ -286,7 +286,7 @@ function Home() {
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-indigo-600">Grow Faster</h2>
         <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-        Unlock Your Website's Full Potential        
+        Elevate Your Brand with Web & Graphic Design 
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
@@ -355,21 +355,16 @@ function Home() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                UI/UX Design
+                Graphic Design
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                Create a visually appealing and intuitive experience for users with our UI/UX design expertise.
+                Transform your vision into stunning visuals with our expert graphic design services, creating captivating and memorable experiences for your audience.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">
-                <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
-                  <div className="flex bg-gray-800/40 ring-1 ring-white/5">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
-                      <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                        NotificationSetting.jsx
-                      </div>
-                      <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
-                    </div>
+                <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl  shadow-2xl">
+                  <div className="flex ring-1 ring-white/5">
+                   
                   </div>
                   <div className="px-6 pb-14 pt-6">{/* Your code example */}</div>
                 </div>

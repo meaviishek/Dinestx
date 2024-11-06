@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Logo from '../assets/test.svg'
+import { app, graphics, graphics1, seo, social, web, Website } from '.'
 function Services(){
 
     const [state, setState] = useState(false)
@@ -18,7 +19,23 @@ function Services(){
             if (!target.closest(".menu-btn")) setState(false);
         };
     }, [])
+    const images = [
+      { src:graphics1, alt: "Image 1" },
+      { src: web, alt: "Image 2" },
+      { src:social, alt: "Image 3" },
+      { src: seo, alt: "Image 4" },
+      { src: app, alt: "Image 5" }
+    ];
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    useEffect(() => {
+      const slideInterval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000); // Change every 3 seconds
+      return () => clearInterval(slideInterval);
+    }, []);
+ 
+    
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
@@ -51,7 +68,9 @@ function Services(){
     )
 
     return (
-        <div className='relative py-32 sm:py-48 lg:py-36'>
+    
+        <div className='relative  lg:py-12'>
+        
             <div className='absolute inset-0 blur-xl h-[580px]' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}></div>
             <div className='relative'>
             <section className="mt-24 mx-auto max-w-screen-xl pb-4 px-4 items-center lg:flex md:px-8">
@@ -79,9 +98,27 @@ function Services(){
                         </form>
                     </div>
                 </div>
-                <div className="flex-1 text-center mt-4 lg:mt-0 lg:ml-3">
-                    <img src="https://i.postimg.cc/kgd4WhyS/container.png" className="w-full mx-auto sm:w-10/12  lg:w-full" />
-                </div>
+                <div className="relative max-w-2xl md:ml-4 mx-auto overflow-hidden rounded-lg">
+      <div className="flex transition-transform duration-500 ease-in-out transform"
+           style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {images.map((image, index) => (
+          <div key={index} className="min-w-full">
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-100 h-70 object-cover rounded-lg"
+            />
+          </div>
+        ))}
+      </div>
+      
+</div>
+
+
+
+
+
+
             </section>
             <section className=" pb-6">
 
@@ -89,130 +126,98 @@ function Services(){
 
 
 
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-        <div className="container mx-auto px-6  ">
-
-            <div className="mb-8 text-center">
-                <h4 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">What We Provide</h4>
-             
-            </div>
-
-            <div className="flex flex-wrap my-6">
-
-                <div className="w-full border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 border-b md:w-1/2 md:border-r lg:w-1/3 p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">Increase sales</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Consectetur pariatur irure exercitation sit amet id
-                        consectetur consectetur magna et Lorem labore qui velit.
-                    </p>
-                </div>
-
-                <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">Enterprise-ready</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Labore duis pariatur est exercitation laboris cupidatat amet
-                        cillum. Amet nisi ullamco.
-                    </p>
-                </div>
-
-                <div className="w-full border-b md:w-1/2 border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r lg:w-1/3 lg:border-r-0 p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">Unlimited growth</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Elit deserunt nisi esse duis cupidatat proident sit minim
-                        mollit officia pariatur incididunt in tempor.
-                    </p>
-                </div>
-
-                <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">Recommended by experts</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Velit sit tempor pariatur quis pariatur incididunt culpa
-                        dolor voluptate officia incididunt velit dolore.
-                    </p>
-                </div>
-
-                <div className="w-full border-b md:w-1/2 border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">Future-proof technology</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Amet tempor occaecat ullamco pariatur anim in excepteur
-                        sit eu occaecat laboris pariatur elit.
-                    </p>
-                </div>
-
-                <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-b-0 lg:border-r-0 p-8">
-                    <div className="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
-                             fill="currentColor" className="h-6 w-6 text-indigo-500">
-                            <path
-                                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 text-xl">User-friendly design</div>
-                    </div>
-                    <p className="leading-loose text-gray-500">Occaecat consectetur elit exercitation est duis irure
-                        reprehenderit ut minim laboris eiusmod qui.
-                    </p>
-                </div>
-
-            </div>
-        </div>
+            <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+  <div className="container mx-auto px-6">
+    <div className="mb-8 text-center">
+      <h4 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">What We Provide</h4>
     </div>
+
+    <div className="flex flex-wrap my-6">
+      <div className="w-full border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 border-b md:w-1/2 md:border-r lg:w-1/3 p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Customized Web Solutions</div>
+        </div>
+        <p className="leading-loose text-gray-500">We develop tailored websites and applications that are designed to engage your target audience and achieve your business goals with unique features and functionalities.</p>
+      </div>
+
+      <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Enterprise-ready Infrastructure</div>
+        </div>
+        <p className="leading-loose text-gray-500">Built on scalable architecture, our solutions cater to businesses of all sizes, ensuring high performance, security, and reliability as your business grows.</p>
+      </div>
+
+      <div className="w-full border-b md:w-1/2 border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r lg:w-1/3 lg:border-r-0 p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Influencer Engagement</div>
+        </div>
+        <p className="leading-loose text-gray-500">Our platform connects influencers and brands, facilitating advertising campaigns that resonate with audiences for maximum impact.</p>
+      </div>
+
+      <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Expert-approved Designs</div>
+        </div>
+        <p className="leading-loose text-gray-500">Our design team creates user-friendly and visually appealing interfaces that adhere to the latest UX/UI principles and best practices.</p>
+      </div>
+
+      <div className="w-full border-b md:w-1/2 border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Client-focused Solutions</div>
+        </div>
+        <p className="leading-loose text-gray-500">Our client-centric approach allows us to craft solutions that align closely with your business objectives and improve user experience.</p>
+      </div>
+
+      <div className="w-full border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:w-1/2 lg:w-1/3 p-8">
+        <div className="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" className="h-6 w-6 text-indigo-500">
+            <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"></path>
+          </svg>
+          <div className="ml-4 text-xl">Performance-driven Strategies</div>
+        </div>
+        <p className="leading-loose text-gray-500">We prioritize efficiency and scalability in our strategies, enabling robust, long-term growth for your digital assets and campaigns.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
 
 
 
 
 
-
-  <section className="">
+<section className="relative py-16 isolate overflow-hidden bg-gray-900">
   <div className="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
+  
     <div>
-      <h2 className="text-3xl font-bold text-center sm:text-5xl">New Features</h2>
-      <p className="max-w-3xl mx-auto mt-4 text-xl text-center">
-        Explore the latest features that enhance your learning experience and make it even more exciting.
+      <h2 className="text-3xl font-bold text-center sm:text-5xl text-gray-200">Website & App Development</h2>
+      <p className="max-w-3xl mx-auto mt-4 text-md text-center text-gray-400">
+        Discover our comprehensive services that elevate your digital presence through custom, responsive, and performance-optimized solutions.
       </p>
     </div>
+    
     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
       <div>
         <div className="mt-4 space-y-12">
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md">
+              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -233,16 +238,16 @@ function Services(){
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium">Advanced Learning Algorithms</h4>
-              <p className="mt-2">
-                Discover our improved learning algorithms that adapt to your preferences and provide even more
-                personalized learning suggestions.
+              <h4 className="text-lg font-medium text-gray-200">Custom & Responsive Designs</h4>
+              <p className="mt-2 text-gray-400">
+                Tailored designs crafted to match your brand identity, ensuring a responsive and seamless user experience across all devices.
               </p>
             </div>
           </div>
+          
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md">
+              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -262,16 +267,16 @@ function Services(){
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium">Interactive Learning Resources</h4>
-              <p className="mt-2">
-                Access an extensive library of interactive resources that make your learning journey engaging and
-                interactive.
+              <h4 className="text-lg font-medium text-gray-200">SEO Optimization</h4>
+              <p className="mt-2 text-gray-400">
+                Increase visibility with SEO-focused development, optimizing site structure, speed, and content for higher rankings and user engagement.
               </p>
             </div>
           </div>
+          
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md">
+              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -290,16 +295,16 @@ function Services(){
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium">Enhanced Video Streaming</h4>
-              <p className="mt-2">
-                Experience seamless video integration with enhanced streaming capabilities, providing a better and more
-                uninterrupted learning experience.
+              <h4 className="text-lg font-medium text-gray-200">Native & Cross-Platform App Development</h4>
+              <p className="mt-2 text-gray-400">
+                Delivering native and cross-platform apps with intuitive interfaces, optimized for both iOS and Android.
               </p>
             </div>
           </div>
+          
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md">
+              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -319,27 +324,30 @@ function Services(){
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium">Advanced Quiz Generation</h4>
-              <p className="mt-2">
-                Take your knowledge testing to the next level with advanced quiz generation, providing more customization
-                options for your quizzes.
+              <h4 className="text-lg font-medium text-gray-200">Wide Range of Development Tools & Languages</h4>
+              <p className="mt-2 text-gray-400">
+                Proficiency in modern tech stacks like React, Vue, Node.js, and Python, ensuring robust, scalable, and high-performance solutions.
               </p>
             </div>
           </div>
         </div>
       </div>
+      
       <div aria-hidden="true" className="mt-10 lg:mt-0">
         <img
           width="600"
           height="600"
-          src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxNHx8Y29tcHV0ZXJ8ZW58MHwwfHx8MTY5OTE3MDk1N3ww&ixlib=rb-4.0.3&q=80&w=1080"
+          src={Website}
           className="mx-auto rounded-lg shadow-lg dark-bg-gray-500"
           alt="New Features Illustration"
         />
       </div>
     </div>
   </div>
+  
+  <div className="absolute inset-0 max-w-md mx-auto h-72 blur-[118px]" style={{ background: "linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)" }}></div>
 </section>
+
 
 
 

@@ -5,9 +5,21 @@ import { GoHomeFill } from "react-icons/go";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { NavLink,Link } from 'react-router-dom';
 import { GoProjectSymlink } from "react-icons/go";
-
+import { useState } from 'react';
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleGoogleLogin = () => {
+    // Placeholder function for Google login logic
+    // Replace this with your Google authentication code
+    console.log("Logging in with Google...");
+  };
   return (
+
     <div>
     {/* <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
     <div
@@ -95,10 +107,44 @@ function Header() {
                     Works
                     </NavLink>
             </nav>
-            <div className="flex text-2xl items-center justify-end gap-3">
-                <a className="inline-flex items-center justify-center rounded-xl bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
-                    href="/login">Login</a>
-            </div>
+            <div className="relative inline-block text-2xl items-center justify-end gap-3">
+  <button
+    onClick={toggleDropdown}
+    id="dropdownOffsetButton"
+    data-dropdown-toggle="dropdownDistance"
+    data-dropdown-offset-distance="35"
+    data-dropdown-offset-skidding="0"
+    className="inline-flex items-center justify-center rounded-xl bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+  >
+    Login
+  </button>
+
+  {isOpen && (
+    <div
+      className={`absolute z-10 w-48 bg-white/70 rounded-lg shadow lg:mt-4 transition-all lg:-left-16 right-0   lg:-bottom-20 bottom-14 -translate-y-0 lg:translate-y-4 animate-dropdown duration-300 transform ease-out opacity-100 `}
+      onClick={() => setIsOpen(false)}
+    >
+      <ul className="p-3 space-y-1 text-sm text-gray-700">
+        <li>
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center p-2 w-full rounded hover:bg-gray-100 transition duration-200"
+          >
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="Google icon"
+              className="w-5 h-5 mr-2"
+            />
+            <span className="text-gray-900">Login with Google</span>
+          </button>
+        </li>
+        {/* Additional login options can be added here */}
+      </ul>
+    </div>
+  )}
+</div>
+
+
 
         </div>
     </div>
