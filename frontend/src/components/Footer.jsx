@@ -12,8 +12,8 @@ function Footer() {
   return (
     <div className='mt-0 overflow-hidden'>
       <footer className="text-gray-400 max-w-screen mx-auto">
-        {/* Discord Community */}
-        <div className="w-3/4 rounded-3xl lg:px-4 my-4 mx-auto bg-gray-200">
+   
+        <div className="w-4/5 rounded-3xl  my-4 mx-auto bg-gray-200">
           <div className='flex flex-col lg:flex-row justify-between items-center text-left p-8 gap-8'>
             <div className='flex flex-col text-left'>
               <h5 className="mb-2 text-xl lg:text-3xl font-bold text-gray-700">Join Our Team</h5>

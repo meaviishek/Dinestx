@@ -103,3 +103,17 @@
 .animate-dropdown {
   animation: dropdown 0.3s ease-out forwards;
 }
+
+
+.animate-marquee {
+  display: flex;
+  gap: 8px;
+  animation: marquee 30s linear infinite;
+}
+.hover\:pause-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

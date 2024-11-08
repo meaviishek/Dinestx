@@ -96,8 +96,8 @@ const Terminal = () => {
     }, [output]);
 
     return (
-        <div className='justify-items-center mt-16'>
-            <div className="text-white font-mono sm:w-[350px] md:w-[400px] lg:w-[600px]">
+        <div className='justify-items-center '>
+            <div className="text-white font-mono w-auto ">
                 <div className='bg-gray-700 p-2 rounded-t-3xl'>
                     <div className="flex justify-between items-center mx-3">
                         <div className='flex items-center gap-3'>

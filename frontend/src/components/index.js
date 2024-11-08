@@ -6,7 +6,7 @@ import About from "./About";
 import Services from "./Services";
 import Works from "./Works";
 import Joinus from "./Joinus";
-import Logo from '../assets/180X180 D.png'
+import Logo from '../assets/Logo.png'
 import Floating from "./Floating";
 import Terminal from "./terminal";
 import Website from '../assets/website.svg'

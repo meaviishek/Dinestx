@@ -7,7 +7,7 @@ export default function ScrollTop() {
 
   useEffect(() => {
     const container = document.getElementById('scrollable-container');
-    console.log('Route changed:', pathname);
+ 
     if (container) {
         container.scrollTo({
             top: 0,

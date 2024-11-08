@@ -79,7 +79,7 @@ function Header() {
                     <p className="sr-only">Website Title</p>
                 </a>
             </div>
-            <nav className="flex md:items-center md:justify-center md:gap-5">
+            <nav className="flex md:items-center md:justify-center md:gap-5 font-sans">
                 <NavLink to='/' aria-current="page"
                     className={({isActive} )=>`relative mx-2 text-gray-800 font-semibold hover:after:block transition-all duration-300 ${isActive ? 'after:flex after:translate-y-0' : 'after:hidden after:translate-y-2'} 
     after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
