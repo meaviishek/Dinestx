@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Reveal from './Reveal';
-import Spline from '@splinetool/react-spline';
+import Lottie from 'react-lottie';
+import anim from '../assets/Animation - 1724698260582.json'
 
 import { app, graphics, graphics1, seo, social, web, Website } from '.'
 function Services(){
@@ -30,7 +31,14 @@ function Services(){
       return () => clearInterval(slideInterval);
     }, []);
  
-    
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: anim,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
@@ -69,21 +77,24 @@ function Services(){
             <div className='absolute inset-0 blur-xl h-[580px]' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}></div>
             <div className='relative'>
             <section className="mt-24 mx-auto max-w-screen-xl pb-4 px-4 items-center lg:flex md:px-8">
-            <Reveal>
+        
             <div className="space-y-4 flex-1 sm:text-center lg:text-left">
+            <Reveal>
   <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
     Take Your Online Presence to the <span className='text-indigo-600'>Next Level</span>
-  </h1>
+  </h1></Reveal><Reveal>
   <p className="text-gray-500 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
     Discover our comprehensive range of services designed to boost your visibility, enhance user experience, and drive growth. From website optimization to customized digital strategies, we’re here to support your brand’s journey to success.
-  </p>
+  </p></Reveal><Reveal>
   <p className="text-slate-700 py-3">
     Explore our expertise in SEO, web development, design, and more to ensure your business stands out in today’s digital landscape.
   </p>
+  </Reveal>
 </div>
-</Reveal>
-<Reveal>
-                <div className="relative max-w-2xl md:ml-4 mx-auto overflow-hidden rounded-lg">
+
+
+                <div className="relative max-w-2xl md:ml-24 mx-auto overflow-hidden rounded-lg">
+                <Reveal>
       <div className="flex transition-transform duration-500 ease-in-out transform"
            style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {images.map((image, index) => (
@@ -96,20 +107,26 @@ function Services(){
           </div>
         ))}
       </div>
-      
+      </Reveal>
 </div>
-</Reveal>
+
+
+</section>
 
 
 
 
 
-            </section>
+
+
+
+
+
+
+
+
+
             <section className=" pb-6">
-
-
-
-
 
             <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
   <div className="container mx-auto px-6">
@@ -188,15 +205,17 @@ function Services(){
   <div className="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
   
     <div>
+    <Reveal>
       <h2 className="text-3xl font-bold text-center sm:text-5xl text-gray-200">Website & App Development</h2>
       <p className="max-w-3xl mx-auto mt-4 text-md text-center text-gray-400">
         Discover our comprehensive services that elevate your digital presence through custom, responsive, and performance-optimized solutions.
-      </p>
+      </p></Reveal>
     </div>
-    
+
     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
       <div>
         <div className="mt-4 space-y-12">
+        <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
@@ -226,7 +245,8 @@ function Services(){
               </p>
             </div>
           </div>
-          
+          </Reveal>
+          <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
@@ -255,7 +275,8 @@ function Services(){
               </p>
             </div>
           </div>
-          
+          </Reveal>
+          <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
@@ -283,7 +304,8 @@ function Services(){
               </p>
             </div>
           </div>
-          
+          </Reveal>
+          <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
@@ -312,9 +334,10 @@ function Services(){
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </div>
-      
+      <Reveal>
       <div aria-hidden="true" className="mt-10 lg:mt-0">
         <img
           width="600"
@@ -324,7 +347,9 @@ function Services(){
           alt="New Features Illustration"
         />
       </div>
+      </Reveal>
     </div>
+
   </div>
   
   <div className="absolute inset-0 max-w-md mx-auto h-72 blur-[118px]" style={{ background: "linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)" }}></div>
@@ -336,6 +361,7 @@ function Services(){
 <section className="bg-gray-50">  
   <div className="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-screen-2xl flex flex-col justify-center">   
     <div className="flex flex-col">    
+    <Reveal>
       <div className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl">     
         <div>
           <h2 className="text-3xl font-bold text-center sm:text-5xl text-gray-800">Graphic Design & Creative Editing</h2>
@@ -344,16 +370,18 @@ function Services(){
           </p>
         </div> 
       </div> 
-
+</Reveal>
       {/* Starts component */}
       <div className="mt-6 border-t pt-12">     
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-24 items-center">      
           <div> 
+          <Reveal>
             <span className="text-gray-600 uppercase text-xs font-medium"> Creativity Meets Precision </span>       
             <p className="text-4xl mt-8 tracking-tighter font-semibold text-gray-700 text-balance"> Stunning visuals that drive engagement and brand recognition </p>       
             <p className="text-sm mt-4 text-gray-700 text-balance"> From social media content to brand identity, our designs are crafted to resonate with your audience and communicate your message effectively. </p>       
-
-            <div className="mt-6 text-xs font-medium grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 text-gray-950">        
+</Reveal>
+            <div className="mt-6 text-xs font-medium grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 text-gray-950">  
+            <Reveal>    
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
                 <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-color-swatch" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
@@ -363,7 +391,9 @@ function Services(){
                   <path d="M10 3h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1z"></path>         
                 </svg> 
                 <span className="text-gray-950 font-medium text-lg"> Poster, Banner and Thumbnails </span> 
-              </div>        
+              </div>   
+              </Reveal>  
+              <Reveal>     
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
                 <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-pencil" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
@@ -373,7 +403,9 @@ function Services(){
                   <path d="M3 21h18"></path>         
                 </svg> 
                 <span className="text-gray-950 font-medium text-lg"> Custom, Impactful Logos </span> 
-              </div>        
+              </div>  
+              </Reveal>
+              <Reveal>     
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
                 <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-photo" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
@@ -383,7 +415,9 @@ function Services(){
                   <path d="M16 12l2 2"></path>         
                 </svg> 
                 <span className="text-gray-950 font-medium text-lg"> High-Quality Photo & Video Editing </span> 
-              </div>        
+              </div>      
+              </Reveal>  
+              <Reveal>
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
                 <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-thumbs-up" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
@@ -392,10 +426,16 @@ function Services(){
                 </svg> 
                 <span className="text-gray-950 font-medium text-lg"> Social Media-Optimized Content </span> 
               </div>       
-            </div>      
+              </Reveal> 
+            </div>   
+               
           </div>      
           <div className="h-full md:order-first"> 
-          <Spline scene="https://prod.spline.design/7RuOHDkfwGAC9Wf2/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/7RuOHDkfwGAC9Wf2/scene.splinecode" /> */}
+          <Lottie options={defaultOptions}
+              height={400}
+              width={400}
+        />
           </div>     
         </div>    
         
@@ -409,6 +449,7 @@ function Services(){
 
 <section className="py-10 sm:py-16 lg:py-24">
     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <Reveal>
       <div className="max-w-2xl mx-auto text-center">
         <p className="text-sm font-semibold tracking-widest text-blue-600 uppercase">
           Effective Social Media Solutions
@@ -417,9 +458,11 @@ function Services(){
           Amplify Your Brand's Reach and Engagement
         </h2>
       </div>
+</Reveal>
 
       <div className="grid items-center grid-cols-1 mt-12 gap-y-10 lg:grid-cols-5 sm:mt-20 gap-x-4">
         <div className="space-y-8 lg:pr-16 xl:pr-24 lg:col-span-2 lg:space-y-12">
+        <Reveal>
           <div className="flex items-start">
             <svg
               className="flex-shrink-0 text-green-500 w-9 h-9"
@@ -442,7 +485,8 @@ function Services(){
               </p>
             </div>
           </div>
-
+          </Reveal>
+<Reveal>
           <div className="flex items-start">
             <svg
               className="flex-shrink-0 text-blue-600 w-9 h-9"
@@ -465,7 +509,8 @@ function Services(){
               </p>
             </div>
           </div>
-
+          </Reveal>
+<Reveal>
           <div className="flex items-start">
             <svg
               className="flex-shrink-0 text-red-500 w-9 h-9"
@@ -488,15 +533,18 @@ function Services(){
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
 
         <div className="lg:col-span-3">
+        <Reveal>
           <img
             className="w-full rounded-lg shadow-xl"
             src="https://cdn.rareblocks.xyz/collection/celebration/images/features/7/dashboard-screenshot.png"
             alt="Social media management dashboard preview"
-          />
+          />    </Reveal>
         </div>
+    
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Terminal } from '.'
+import Reveal from './Reveal';
 const features = [
   {
     icon: 1,
@@ -26,6 +27,7 @@ function Works() {
 <section className="py-14">
   <div className="max-w-screen-xl mx-auto px-4 text-gray-600 gap-16 justify-between md:px-8 lg:flex">
     <div>
+    <Reveal>
       <div className="max-w-xl space-y-3">
         <h3 className="text-indigo-600 font-semibold">
           Our Projects
@@ -36,11 +38,13 @@ function Works() {
         <p>
           Explore some of our recent work, where we’ve turned complex requirements into streamlined, engaging websites. Each project highlights our dedication to delivering quality, performance, and a user-centered experience.
         </p>
-      </div>
+      </div></Reveal>
       <div className="mt-12 max-w-lg lg:max-w-none">
         <ul className="space-y-8">
           {
             features.map((item, idx) => (
+              <>
+              <Reveal>
               <li key={idx} className="flex gap-x-4">
                 <div className="flex-none w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center">
                   {item.icon}
@@ -65,14 +69,17 @@ function Works() {
                   </a>
                 </div>
               </li>
+              </Reveal>
+              </>
             ))
           }
         </ul>
       </div>
     </div>
+    <Reveal>
     <div className="mt-12 lg:mt-0">
       <img src="https://raw.githubusercontent.com/sidiDev/remote-assets/main/Safari%20(Big%20Sur)%20-%20Light.png" className="w-full shadow-lg rounded-lg border" alt="Project preview" />
-    </div>
+    </div></Reveal>
   </div>
 </section>
 

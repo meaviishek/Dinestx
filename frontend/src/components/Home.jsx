@@ -1,6 +1,7 @@
+import Lottie from 'react-lottie';
 import { Terminal } from '.'
 import Reveal from './Reveal';
-
+import anima from '../assets/corner-right-down.json'
 function Home() {
   const features = [
     {
@@ -52,6 +53,15 @@ function Home() {
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto, explicabo, cupiditate quas totam!',
     },
   ];
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: anima,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
   return (
     <div><div className="bg-white">
    
@@ -92,49 +102,52 @@ function Home() {
     className="relative left-[calc(50%-30rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/3 rotate-[60deg] bg-gradient-to-tr from-[#ee87fc] to-[#1101e9] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] animate-gradient-pulse"
   />
 </div>
-
-  <section className="mx-auto max-w-screen-2xl pb-4 px items-center lg:flex md:px-8 relative">
 <Reveal>
-  <div className="space-y-4 flex-1 sm:text-center lg:text-left w-1/2">
-    <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
-      Elevate Your Brand with
-      <span className="text-indigo-600"> Our Digital Solutions</span>
-    </h1>
-    <p className="text-gray-600 max-w-xl text-xl leading-relaxed sm:mx-auto lg:ml-0">
-      Your one-stop agency for Website and App Development, SEO, Graphic Design, and Social Media Management. Let us drive your digital success.
-    </p>
+  <section className="flex lg:mt-28 justify-center items-center  max-w-screen-2xl pb-4 px-4 mx-auto animate-fadeIn">
+    <div className="flex flex-wrap md:flex-nowrap w-full md:space-x-4">
+      
+      {/* Text Section */}
+      <div className="flex-1 sm:text-center md:text-left w-full md:w-1/2 space-y-4">
+        <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
+          Elevate Your Brand with
+          <span className="text-indigo-600"> Our Digital Solutions</span>
+        </h1>
+        <p className="text-gray-600 max-w-xl text-xl leading-relaxed sm:mx-auto md:mx-0">
+          Your one-stop agency for Website and App Development, SEO, Graphic Design, and Social Media Management. Let us drive your digital success.
+        </p>
 
-    {/* Contact Button */}
-    <div className="mt-6">
-      <button className="outline-none bg-blue-700 text-white text-center px-4 py-3 rounded-xl shadow w-full hover:bg-blue-600 sm:w-auto">
-        Contact Us
-      </button>
+        {/* Contact Button */}
+        <div className="mt-6">
+          <button className="outline-none bg-blue-700 text-white text-center px-4 py-3 rounded-xl shadow w-full md:w-auto hover:bg-blue-600">
+            Contact Us
+          </button>
+        </div>
+      </div>
+
+      {/* Terminal Section */}
+      
+      <div className="flex-1 w-full md:w-1/2 relative mt-20 md:mt-0">
+      
+        {/* Terminal Component */}
+        <Terminal />
+
+        {/* Arrow and Message */}
+        <div className="absolute -top-10 right-0 flex items-center space-x-4 transform -translate-y-4">
+          <p className="text-gray-500 text-xs lg:text-sm font-semibold bg-slate-50 py-2 px-3 rounded-lg shadow-xl border border-gray-300">
+            You can control this website through this terminal also
+          </p>
+          <Lottie 
+	    options={defaultOptions}
+        height={50}
+        width={50}
+      />
+        </div>
+      </div>
+
     </div>
-  </div>
-</Reveal>
-  {/* Terminal Component and Arrow */}
-  <div className="flex mt-24 lg:ml-3 relative">
-  <Reveal>
-    <Terminal />
-</Reveal>
-    {/* Arrow and Message */}
-    <div className="absolute -top-10  right-0 lg:right-[-2rem] flex items-center space-x-4 transform  -translate-y-4">
-      <p className="text-gray-500 text-xs lg:text-sm font-semibold bg-slate-50 py-2 px-3 rounded-lg shadow-xl border border-gray-300">
-        You can Control this website through this terminal also
-      </p>
-      <svg
-        className="h-8 w-8 text-indigo-600 rotate-45"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 2a1 1 0 011 1v16.586l6.293-6.293a1 1 0 011.414 1.414l-8 8a1 1 0 01-1.414 0l-8-8a1 1 0 111.414-1.414L11 19.586V3a1 1 0 011-1z" />
-      </svg>
-    </div>
-  </div>
+  </section>
 
-</section>
-
+</Reveal>
 
 
       <div
@@ -155,9 +168,11 @@ function Home() {
   <div className="py-14">
        
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+            <Reveal>
                 <h3 className="font-semibold text-sm text-gray-600 text-center">
                     TRUSTED BY TEAMS FROM AROUND THE WORLD
                 </h3>
+                </Reveal>
                 <div className="mt-6">
                     <ul className="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x">
                         {/* LOGO 1 */}
@@ -210,36 +225,43 @@ function Home() {
 
 
 
-        <div className="relative isolate overflow-hidden bg-gray-900 py-16 ">
+        <div className="relative isolate overflow-hidden bg-gray-900 py-24 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal>
   <div className="text-center">
+
     <h2 className="text-base font-semibold text-indigo-600">Services</h2>
-    <p className="mt-2 text-5xl font-semibold tracking-tight text-gray-100 sm:text-6xl">
-      What We Do
+    <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-100 sm:text-5xl">
+      What We Do 
     </p>
+    
   </div>
-  <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-300 sm:text-xl">
+
+  <p className="mx-auto mt-4 max-w-2xl text-center text-md text-gray-300 sm:text-md">
     From start to finish, we provide comprehensive solutions tailored to your unique requirements. Let us guide you on your journey to success.
   </p>
+</Reveal>
 
   <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 mt-16">
 
     {/* Website & App Development */}
+   
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-600  animate-border" >
     <Reveal>
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
-      <div className="mb-12 space-y-4">
+      <div className="mb-8 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Website & App Development</h3>
         <p className="mb-6">
           Build dynamic, responsive websites and mobile applications tailored to your needs. Our team ensures seamless functionality and optimal performance across all devices.
         </p>
         <a href="#" className="block font-medium text-purple-600">Know more</a>
       </div>
-      <img src="https://tailus.io/sources/blocks/end-image/preview/images/web-dev.svg" className="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" />
+      </Reveal>
     </div>
-</Reveal>
+
     {/* Graphic Design */}
+ 
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
     <Reveal>
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Graphic Design</h3>
         <p className="mb-6">
@@ -247,12 +269,13 @@ function Home() {
         </p>
         <a href="#" className="block font-medium text-purple-600">Know more</a>
       </div>
-      <img src="https://tailus.io/sources/blocks/end-image/preview/images/graphic.svg" className="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" />
+      </Reveal>
     </div>
-</Reveal>
+
     {/* Social Media Management */}
+ 
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
     <Reveal>
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Social Media Management</h3>
         <p className="mb-6">
@@ -260,9 +283,9 @@ function Home() {
         </p>
         <a href="#" className="block font-medium text-purple-600">Know more</a>
       </div>
-      <img src="https://tailus.io/sources/blocks/end-image/preview/images/social-media.svg" className="w-2/3 ml-auto" alt="illustration" loading="lazy" />
+      </Reveal>
     </div>
-</Reveal>
+
   </div>
 </div>
 
@@ -298,14 +321,17 @@ function Home() {
 
     <div className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <Reveal>
         <h2 className="text-center text-base/7 font-semibold text-indigo-600">Grow Faster</h2>
         <p className="mx-auto mt-2 max-w-2xl text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
         Elevate Your Brand with Web & Graphic Design 
-        </p>
+        </p></Reveal>
         <Reveal>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+      
           <div className="relative lg:row-span-2">
             <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+          
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
@@ -325,8 +351,11 @@ function Home() {
                 </div>
               </div>
             </div>
+          
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
-          </div>
+          </div> 
+
+          
           <div className="relative max-lg:row-start-1">
             <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
@@ -346,6 +375,8 @@ function Home() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
           </div>
+   
+       
           <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
             <div className="absolute inset-px rounded-lg bg-white"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
@@ -365,6 +396,8 @@ function Home() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
           </div>
+ 
+       
           <div className="relative lg:row-span-2">
             <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
@@ -387,6 +420,7 @@ function Home() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
           </div>
+      
         </div>
         </Reveal>
       </div>
@@ -465,9 +499,10 @@ function Home() {
 
 
     <div className="min-w-screen lg:mt-16 mt-10 flex items-center justify-center ">
-    <Reveal>
+  
       <div className="w-full   px-5  text-gray-800">
         <div className="w-full max-w-6xl mx-auto">
+        <Reveal>
           <div className="text-center max-w-xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-5 text-gray-600">
             Feedback that Inspires Us
@@ -483,9 +518,11 @@ function Home() {
               <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
             </div>
           </div>
+          </Reveal>
           <div className="flex flex-wrap -mx-3">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="px-3 md:w-1/3">
+              <Reveal>
                 <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
@@ -509,12 +546,13 @@ function Home() {
                     </p>
                   </div>
                 </div>
+                </Reveal>
               </div>
             ))}
           </div>
         </div>
       </div>
-      </Reveal>
+    
       {/* <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
         <a
           title="Buy me a coffee"

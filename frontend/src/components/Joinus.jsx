@@ -11,7 +11,7 @@ function Joinus() {
       <div>
         <h2 className="font-semibold text-xl text-gray-600 text-center">Join Our Team</h2>
         <p className="text-gray-500 mb-6 text-center">Please fill out the form below to apply. Ensure all fields are filled correctly.</p>
-        <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+        <div className="bg-white  shadow-lg p-4 px-4 md:p-8 mb-6 rounded-2xl">
           <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
             <div className="text-gray-600">
               <p className="font-medium text-lg">Personal Details</p>

@@ -117,3 +117,9 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
