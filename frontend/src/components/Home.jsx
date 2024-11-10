@@ -246,7 +246,7 @@ function Home() {
 
     {/* Website & App Development */}
    
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-600  animate-border" >
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-700 " >
     <Reveal>
       <div className="mb-8 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Website & App Development</h3>
@@ -260,7 +260,7 @@ function Home() {
 
     {/* Graphic Design */}
  
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-700">
     <Reveal>
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Graphic Design</h3>
@@ -274,7 +274,7 @@ function Home() {
 
     {/* Social Media Management */}
  
-    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-300">
+    <div className="bg-white rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:px-8 hover:scale-105 transition-all duration-700">
     <Reveal>
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-semibold text-purple-900">Social Media Management</h3>
