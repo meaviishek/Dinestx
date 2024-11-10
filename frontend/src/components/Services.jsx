@@ -373,7 +373,7 @@ function Services(){
 </Reveal>
       {/* Starts component */}
       <div className="mt-6 border-t pt-12">     
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-24 items-center">      
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16 items-center">      
           <div> 
           <Reveal>
             <span className="text-gray-600 uppercase text-xs font-medium"> Creativity Meets Precision </span>       
@@ -430,13 +430,15 @@ function Services(){
             </div>   
                
           </div>      
+          <Reveal>
           <div className="h-full md:order-first"> 
           {/* <Spline scene="https://prod.spline.design/7RuOHDkfwGAC9Wf2/scene.splinecode" /> */}
           <Lottie options={defaultOptions}
-              height={400}
-              width={400}
+              height={350}
+              width={350}
         />
           </div>     
+          </Reveal>
         </div>    
         
         {/* Additional content can be added here */}
