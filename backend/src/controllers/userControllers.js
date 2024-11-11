@@ -17,6 +17,7 @@ export const googleAuth = async (req, res) => {
 
         const {email, name, picture} = ticket.getPayload()
         res.status(200).json({
+            tokenId,
             email,
             name,
             picture

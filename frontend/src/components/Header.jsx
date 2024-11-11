@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import { googleLogin } from '../services/userServices';
 import { Logo } from '.';
 import { GoogleLogin,googleLogout  } from '@react-oauth/google';
@@ -10,24 +10,36 @@ import Reveal from './Reveal';
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const handleGoogleLogin = async (response) => {
-    
-    const res =await googleLogin(response.credential)
-    console.log(res.picture)
-    setUser(res)
-    
-    // Placeholder function for Google login logic
-    // Replace this with your Google authentication code
-    console.log("Logging in with Google...");
+    try {
+      const res = await googleLogin(response.credential);
+      setUser(res);
+      // Store user data in local storage
+      localStorage.setItem('user', JSON.stringify(res));
+    } catch (error) {
+      console.error("Login failed", error);
+    }
   };
+
   const handleLogout = () => {
     googleLogout();
-  setUser(null)
+    setUser(null);
+    localStorage.removeItem('user');
   };
+
+  // Load user data from local storage on page load
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
   return (
 
     <div>
@@ -130,7 +142,7 @@ function Header() {
           />
 
           {isOpen && (
-            <div className={`absolute z-10 w-48 bg-white/70 rounded-lg shadow  transition-all lg:-left-16 right-0   lg:-bottom-16 bottom-14 -translate-y-0 lg:translate-y-4 animate-dropdown duration-300 transform ease-out opacity-100 `}>
+            <div className={`absolute z-10 w-36 p-1 bg-white/70 rounded-lg shadow  transition-all lg:-left-16 right-0   lg:-bottom-16 bottom-14 -translate-y-0 lg:translate-y-4 animate-dropdown duration-300 transform ease-out opacity-100 `}>
               <button
                 onClick={handleLogout}
                 className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"

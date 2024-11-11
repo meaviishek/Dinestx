@@ -107,9 +107,11 @@ function Works() {
       Our Graphics and Editing Works
     </h2>
 
-    <div className="flex gap-8 flex-wrap justify-center">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 flex-wrap justify-center">
       {/* Image Links with Hover Effect */}
+      <Reveal>
       <a href="#_" className="relative group w-64 h-64">
+    
         <img
           src="https://images.unsplash.com/photo-1530035415911-95194de4ebcc?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           className="rounded-xl transition-transform duration-500 w-full h-full object-cover transform group-hover:scale-110"
@@ -118,8 +120,10 @@ function Works() {
         <div className="absolute inset-0 bg-black bg-opacity-60 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <p className="text-white text-lg font-semibold">Graphic Design Project 1</p>
         </div>
+     
       </a>
-
+</Reveal>
+<Reveal>
       <a href="#_" className="relative group w-64 h-64">
         <img
           src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -130,7 +134,8 @@ function Works() {
           <p className="text-white text-lg font-semibold">Graphic Design Project 2</p>
         </div>
       </a>
-
+</Reveal>
+<Reveal>
       <a href="#_" className="relative group w-64 h-64">
         <img
           src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -141,7 +146,8 @@ function Works() {
           <p className="text-white text-lg font-semibold">Graphic Design Project 3</p>
         </div>
       </a>
-
+</Reveal>
+<Reveal>
       <a href="#_" className="relative group w-64 h-64">
         <img
           src="https://images.unsplash.com/photo-1522775417749-29284fb89f43?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -152,6 +158,7 @@ function Works() {
           <p className="text-white text-lg font-semibold">Graphic Design Project 4</p>
         </div>
       </a>
+      </Reveal>
     </div>
   </div>
 </section>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Reveal from './Reveal';
 import Lottie from 'react-lottie';
 import anim from '../assets/Animation - 1724698260582.json'
+import { GiThreePointedShuriken } from "react-icons/gi";
 
 import { app, graphics, graphics1, seo, social, web, Website } from '.'
 function Services(){
@@ -40,35 +41,6 @@ function Services(){
       }
     };
 
-    const Brand = () => (
-        <div className="flex items-center justify-between py-5 md:block">
-            <a href="javascript:void(0)">
-                <img
-                    src="https://www.floatui.com/logo.svg"
-                    width={120}
-                    height={50}
-                    alt="Float UI logo"
-                />
-            </a>
-            <div className="md:hidden">
-                <button className="menu-btn text-gray-500 hover:text-gray-800"
-                    onClick={() => setState(!state)}
-                >
-                    {
-                        state ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
-                        ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                        )
-                    }
-                </button>
-            </div>
-        </div>
-    )
 
     return (
     
@@ -125,18 +97,18 @@ function Services(){
 
 
 
-
+<Reveal>
             <section className=" pb-6">
 
-            <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-  <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto p-2 sm:p-6 lg:p-8">
+  <div className="container mx-auto px-1 lg:px-6">
     <div className="mb-8 text-center">
     
       <h4 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">What We Provide</h4>
     </div>
 
     <div className="grid lg:grid-cols-3 my-6">
-    <Reveal>
+   
       <div className="w-full border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 border-b  md:border-r  p-8">
         <div className="flex items-center mb-6">
        
@@ -144,8 +116,7 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">We develop tailored websites and applications that are designed to engage your target audience and achieve your business goals with unique features and functionalities.</p>
       </div>
-      </Reveal>
-      <Reveal>
+ 
 
       <div className="w-full border-b  lg:border-r p-8">
         <div className="flex items-center mb-6">
@@ -154,8 +125,7 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">Built on scalable architecture, our solutions cater to businesses of all sizes, ensuring high performance, security, and reliability as your business grows.</p>
       </div>
-</Reveal>
-<Reveal>
+
       <div className="w-full border-b  border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r  lg:border-r-0 p-8">
         <div className="flex items-center mb-6">
      
@@ -163,8 +133,7 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">Our platform connects influencers and brands, facilitating advertising campaigns that resonate with audiences for maximum impact.</p>
       </div>
-</Reveal>
-<Reveal>
+
       <div className="w-full border-b  lg:border-r lg:border-b-0 p-8">
         <div className="flex items-center mb-6">
        
@@ -172,8 +141,7 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">Our design team creates user-friendly and visually appealing interfaces that adhere to the latest UX/UI principles and best practices.</p>
       </div>
-</Reveal>
-<Reveal>
+
       <div className="w-full border-b  border-gray-300 bg-gradient-to-b from-gray-200 to-transparent hover:from-gray-300 transition-all duration-1000 md:border-r md:border-b-0  lg:border-b-0 p-8">
         <div className="flex items-center mb-6">
          
@@ -181,8 +149,7 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">Our client-centric approach allows us to craft solutions that align closely with your business objectives and improve user experience.</p>
       </div>
-</Reveal>
-<Reveal>
+
       <div className="w-full border-gray-300 bg-gradient-to-b    transition-all duration-1000  p-8">
         <div className="flex items-center mb-6">
        
@@ -190,13 +157,13 @@ function Services(){
         </div>
         <p className="leading-loose text-gray-500">We prioritize efficiency and scalability in our strategies, enabling robust, long-term growth for your digital assets and campaigns.</p>
       </div>
-      </Reveal>
+   
     </div>
   </div>
 </div>
-
 </section>
 
+</Reveal>
 
 
 
@@ -373,7 +340,7 @@ function Services(){
 </Reveal>
       {/* Starts component */}
       <div className="mt-6 border-t pt-12">     
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16 items-center">      
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 items-center">      
           <div> 
           <Reveal>
             <span className="text-gray-600 uppercase text-xs font-medium"> Creativity Meets Precision </span>       
@@ -383,47 +350,25 @@ function Services(){
             <div className="mt-6 text-xs font-medium grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 text-gray-950">  
             <Reveal>    
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
-                <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-color-swatch" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
-                  <path d="M19 3h-2a1 1 0 0 0 -1 1v16a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-16a1 1 0 0 0 -1 -1z"></path>          
-                  <path d="M10 7h-2a1 1 0 0 0 -1 1v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1z"></path>          
-                  <path d="M15 11h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-6a1 1 0 0 0 -1 -1z"></path>          
-                  <path d="M10 3h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1z"></path>         
-                </svg> 
+              <GiThreePointedShuriken/> 
                 <span className="text-gray-950 font-medium text-lg"> Poster, Banner and Thumbnails </span> 
               </div>   
               </Reveal>  
               <Reveal>     
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
-                <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-pencil" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
-                  <path d="M13 4l7 7"></path>          
-                  <path d="M13 12l7 7"></path>          
-                  <path d="M4 13l7 -7"></path>          
-                  <path d="M3 21h18"></path>         
-                </svg> 
+                <GiThreePointedShuriken/>
                 <span className="text-gray-950 font-medium text-lg"> Custom, Impactful Logos </span> 
               </div>  
               </Reveal>
               <Reveal>     
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
-                <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-photo" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
-                  <path d="M4 6l2 -2h12l2 2v12l-2 2h-12l-2 -2v-12"></path>          
-                  <path d="M8 11h8l-4 4"></path>          
-                  <path d="M12 8l-2 2"></path>          
-                  <path d="M16 12l2 2"></path>         
-                </svg> 
+              <GiThreePointedShuriken/>
                 <span className="text-gray-950 font-medium text-lg"> High-Quality Photo & Video Editing </span> 
               </div>      
               </Reveal>  
               <Reveal>
               <div className="inline-flex items-center gap-2 text-xs text-gray-700"> 
-                <svg className="icon icon-tabler text-gray-700 size-4 icon-tabler-thumbs-up" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">          
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>          
-                  <path d="M7 16v-10a2 2 0 0 1 2 -2h4.5a2 2 0 0 1 2 1.5l1 4v7"></path>         
-                  <path d="M12 10l4 4"></path>         
-                </svg> 
+              <GiThreePointedShuriken/>
                 <span className="text-gray-950 font-medium text-lg"> Social Media-Optimized Content </span> 
               </div>       
               </Reveal> 

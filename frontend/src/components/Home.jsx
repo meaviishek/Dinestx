@@ -2,6 +2,8 @@ import Lottie from 'react-lottie';
 import { Terminal } from '.'
 import Reveal from './Reveal';
 import anima from '../assets/corner-right-down.json'
+
+import { Link } from 'react-router-dom';
 function Home() {
   const features = [
     {
@@ -103,7 +105,7 @@ function Home() {
   />
 </div>
 <Reveal>
-  <section className="flex lg:mt-28 justify-center items-center  max-w-screen-2xl pb-4 px-4 mx-auto animate-fadeIn">
+  <section className="flex lg:mt-28 justify-center items-center  max-w-screen-xl pb-4  mx-auto animate-fadeIn">
     <div className="flex flex-wrap md:flex-nowrap w-full md:space-x-4">
       
       {/* Text Section */}
@@ -253,7 +255,7 @@ function Home() {
         <p className="mb-6">
           Build dynamic, responsive websites and mobile applications tailored to your needs. Our team ensures seamless functionality and optimal performance across all devices.
         </p>
-        <a href="#" className="block font-medium text-purple-600">Know more</a>
+        <Link to='/services' className="block font-medium text-purple-600">Know more</Link>
       </div>
       </Reveal>
     </div>
@@ -267,7 +269,7 @@ function Home() {
         <p className="mb-6">
           Elevate your brand with visually compelling graphics. From logos to marketing materials, we create designs that capture and communicate your brand identity effectively.
         </p>
-        <a href="#" className="block font-medium text-purple-600">Know more</a>
+        <Link to='/services' className="block font-medium text-purple-600">Know more</Link>
       </div>
       </Reveal>
     </div>
@@ -281,7 +283,7 @@ function Home() {
         <p className="mb-6">
           Enhance your online presence with strategic social media management. We help you engage, grow, and build a loyal audience across all platforms.
         </p>
-        <a href="#" className="block font-medium text-purple-600">Know more</a>
+        <Link to='/services' className="block font-medium text-purple-600">Know more</Link>
       </div>
       </Reveal>
     </div>
