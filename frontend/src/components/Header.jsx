@@ -85,6 +85,15 @@ function Header() {
                     {/* <MdMiscellaneousServices size='25px'  className='' /> */}
                     Services
                     </NavLink>
+
+                    <NavLink to="/DiUI" className={({isActive} )=>`relative mx-2 text-gray-800 font-semibold hover:after:block transition-all duration-300 ${isActive ? 'after:flex after:translate-y-0' : 'after:hidden after:translate-y-2'} 
+    after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
+    after:w-3 after:h-[5px] after:top-8 after:bg-blue-700 after:transition-transform 
+    after:duration-500 after:rounded-t-full` }
+                    href="#">
+                    {/* <GoProjectSymlink size='25px' /> */}
+                    DiUI
+                    </NavLink>
                    
                       <NavLink to="/works" className={({isActive} )=>`relative mx-2 text-gray-800 font-semibold hover:after:block transition-all duration-300 ${isActive ? 'after:flex after:translate-y-0' : 'after:hidden after:translate-y-2'} 
     after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
@@ -94,6 +103,7 @@ function Header() {
                     {/* <GoProjectSymlink size='25px' /> */}
                     Works
                     </NavLink>
+
             </nav>
             <div className="flex text-2xl items-center justify-end gap-3">
                 <a className="inline-flex items-center justify-center rounded-xl bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
