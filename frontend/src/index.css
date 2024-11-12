@@ -1,50 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
-  scroll-behavior: smooth;
+
+
+
+/* Custom Thin Scrollbar for Webkit Browsers (Chrome, Safari, Edge) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
 }
 
-.example::-webkit-scrollbar {
-    display: none;
-  }
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(0, 55, 206, 0.13); /* Light blue track background */
+}
 
-  /* Hide Scrollbar for Webkit Browsers */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Hides scrollbar for Chrome, Safari, Edge */
-  }
-  
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
-    scrollbar-width: none;     /* Hides scrollbar for Firefox */
-  }
-  
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .example {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-/* Custom Scrollbar */
-.scrollbar-thin::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Scrollbar track background */
-    
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: #4A90E2; /* Scrollbar thumb color */
-    border-radius: 10px;
-    border: 2px solid transparent;
-  }
-  
-  .scrollbar-thin:hover::-webkit-scrollbar-thumb {
-    background-color: #007ACE; /* Darken on hover */
-  }
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #0037ce; /* Thumb color */
+  border-radius: 10px;
+  border: 4px solid transparent;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+  background-color: #0020a3; /* Darken thumb on hover */
+}
 
 
   @keyframes rotate {
@@ -79,4 +57,69 @@ html {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+@keyframes patternOpacity {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+/* Add the animation to the path */
+.animate-pattern-opacity {
+  animation: patternOpacity 6s infinite ease-in-out;
+}
+
+@keyframes gradientPulse {
+  0%, 100% {
+    transform: translateX(-50%) rotate(30deg) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) rotate(35deg) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.animate-gradient-pulse {
+  animation: gradientPulse 8s ease-in-out infinite;
+}
+
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.3s ease-out forwards;
+}
+
+
+.animate-marquee {
+  display: flex;
+  gap: 8px;
+  animation: marquee 30s linear infinite;
+}
+.hover\:pause-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
 }

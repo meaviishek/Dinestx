@@ -1,13 +1,47 @@
-import React from 'react'
-import { IoCloseOutline } from "react-icons/io5";
+import {useEffect} from 'react'
+import { googleLogin } from '../services/userServices';
 import { Logo } from '.';
-import { GoHomeFill } from "react-icons/go";
-import { MdMiscellaneousServices } from "react-icons/md";
-import { NavLink,Link } from 'react-router-dom';
-import { GoProjectSymlink } from "react-icons/go";
+import { GoogleLogin,googleLogout  } from '@react-oauth/google';
 
+import { NavLink,Link } from 'react-router-dom';
+
+import { useState } from 'react';
+import Reveal from './Reveal';
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleGoogleLogin = async (response) => {
+    try {
+      const res = await googleLogin(response.credential);
+      setUser(res);
+      // Store user data in local storage
+      localStorage.setItem('user', JSON.stringify(res));
+    } catch (error) {
+      console.error("Login failed", error);
+    }
+  };
+
+  const handleLogout = () => {
+    googleLogout();
+    setUser(null);
+    localStorage.removeItem('user');
+  };
+
+  // Load user data from local storage on page load
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
   return (
+
     <div>
     {/* <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
     <div
@@ -61,13 +95,15 @@ function Header() {
     className="fixed inset-x-0 bottom-0 md:top-4 lg:top-4 z-40 mx-auto w-full bg-white/20 py-3 shadow backdrop-blur-md md:rounded-3xl lg:max-w-screen-lg md:bottom-auto">
     <div className="px-4">
         <div className="flex items-center justify-between">
+        <Reveal>
             <div className="flex shrink-0">
                 <a aria-current="page" className="flex items-center" href="/">
                     <img className="h-10 w-auto object-fit: cover" src={Logo} alt=""/>
                     <p className="sr-only">Website Title</p>
                 </a>
             </div>
-            <nav className="flex md:items-center md:justify-center md:gap-5">
+            </Reveal>
+            <nav className="flex md:items-center md:justify-center md:gap-5 font-sans">
                 <NavLink to='/' aria-current="page"
                     className={({isActive} )=>`relative mx-2 text-gray-800 font-semibold hover:after:block transition-all duration-300 ${isActive ? 'after:flex after:translate-y-0' : 'after:hidden after:translate-y-2'} 
     after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
@@ -105,16 +141,68 @@ function Header() {
                     </NavLink>
 
             </nav>
-            <div className="flex text-2xl items-center justify-end gap-3">
-                <a className="inline-flex items-center justify-center rounded-xl bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
-                    href="/login">Join Us</a>
+            <div className="relative inline-block text-2xl items-center justify-end gap-3">
+            {user ? (
+        <div>
+          <img
+            src={user.picture}
+            alt="User Profile"
+            onClick={toggleDropdown}
+            className="w-10 h-10 rounded-full cursor-pointer"
+          />
+
+          {isOpen && (
+            <div className={`absolute z-10 w-36 p-1 bg-white/70 rounded-lg shadow  transition-all lg:-left-16 right-0   lg:-bottom-16 bottom-14 -translate-y-0 lg:translate-y-4 animate-dropdown duration-300 transform ease-out opacity-100 `}>
+              <button
+                onClick={handleLogout}
+                className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              >
+                Logout
+              </button>
             </div>
+          )}
+        </div>
+      )  : (
+        <div>
+        <button
+    onClick={toggleDropdown}
+    id="dropdownOffsetButton"
+    data-dropdown-toggle="dropdownDistance"
+    data-dropdown-offset-distance="35"
+    data-dropdown-offset-skidding="0"
+    className="inline-flex items-center justify-center rounded-xl bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+  >
+    Login
+  </button>
+     
+  {isOpen && (
+    <div
+      className={`absolute z-10 w-48 bg-white/70 rounded-lg shadow lg:mt-4 transition-all lg:-left-16 right-0   lg:-bottom-20 bottom-14 -translate-y-0 lg:translate-y-4 animate-dropdown duration-300 transform ease-out opacity-100 `}
+      onClick={() => setIsOpen(false)}
+    >
+      
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center p-2 w-full rounded  transition duration-200"
+          >
+           <GoogleLogin onSuccess={handleGoogleLogin}  />
+          </button>
+   
+    </div>
+  )}
+  </div>
+     )}
+
+
+</div>
+
+
 
         </div>
     </div>
 </header>
    
-  
+ 
   
   
   </div>
