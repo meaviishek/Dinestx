@@ -24,7 +24,7 @@ const Reveal = ({ children }) => {
                 }}
                 initial="hidden"
                 animate={mainControl}
-                transition={{ duration: 0.7, delay: 0.45 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 style={{ position: "relative", zIndex: 10 }}
             >
                 {children}

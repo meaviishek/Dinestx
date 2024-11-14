@@ -42,24 +42,24 @@ function Footer() {
 
               {/* Developer Profile and Portfolio Links */}
               <div className="mt-4 sm:mt-0 text-center">
-                <a href="https://developer-profile-link.com" target="_blank"  className="text-gray-400 hover:text-white mx-2">
+                <a href="https://www.linkedin.com/in/meaviishek/" target="_blank"  className="text-gray-400 hover:text-white mx-2">
                   Abhishek Kumar
                 </a>
-                <a href="https://portfolio-link.com" target="_blank"  className="text-gray-400 hover:text-white mx-2">
+                <a href="https://www.linkedin.com/in/vishnupraksh/" target="_blank"  className="text-gray-400 hover:text-white mx-2">
                 Vishnu Prakash
                 </a>
               </div>
 
               {/* Social Media Icons */}
               <div className="flex space-x-4 mt-4 sm:mt-0 justify-center sm:justify-end">
-                <a href="https://www.instagram.com" target="_blank" >
-                  <LuInstagram className="w-5 h-5 text-gray-400 hover:text-white" />
+                <a href="https://www.instagram.com/di.nestx/" target="_blank" >
+                  <LuInstagram className="w-6 h-6 text-gray-400 hover:text-white" />
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" >
-                  <FaLinkedin className="w-5 h-5 text-gray-400 hover:text-white" />
+                <a href="https://www.linkedin.com/in/dinestx-2478ba2a3/" target="_blank" >
+                  <FaLinkedin className="w-6 h-6 text-gray-400 hover:text-white" />
                 </a>
-                <a href="https://wa.me/yourwhatsappnumber" target="_blank" >
-                  <FaWhatsapp className="w-5 h-5 text-gray-400 hover:text-white" />
+                <a href="https://wa.me/8409031739" target="_blank" >
+                  <FaWhatsapp className="w-6 h-6 text-gray-400 hover:text-white" />
                 </a>
               </div>
             </div>

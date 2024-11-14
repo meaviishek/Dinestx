@@ -1,6 +1,6 @@
 // import http from 'http';
 import app from './app.js';
-// import connectDB from './db/index.js';  // Your DB connection
+import connectDB from './db/index.js';  // Your DB connection
 import dotenv from 'dotenv';
 
 dotenv.config();  // Load environment variables
@@ -8,7 +8,7 @@ dotenv.config();  // Load environment variables
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
-// connectDB();
+connectDB();  
 
 // Start the server 
 // const server = http.createServer(app); 

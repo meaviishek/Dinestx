@@ -3,8 +3,13 @@ import Reveal from './Reveal';
 import Lottie from 'react-lottie';
 import anim from '../assets/Animation - 1724698260582.json'
 import { GiThreePointedShuriken } from "react-icons/gi";
+import { PiDevicesFill } from "react-icons/pi";
+
+import { TbSeo } from "react-icons/tb";
+import { TbBrandReactNative } from "react-icons/tb";
 
 import { app, graphics, graphics1, seo, social, web, Website } from '.'
+import { FaTools } from 'react-icons/fa';
 function Services(){
 
     const [state, setState] = useState(false)
@@ -185,28 +190,12 @@ function Services(){
         <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-rocket"
-                >
-                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-                </svg>
+              <div className="flex items-center justify-center rounded-md text-gray-300">
+                <PiDevicesFill className='w-10 h-10'/>
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium text-gray-200">Custom & Responsive Designs</h4>
+              <h4 className="text-lg font-medium text-gray-300">Custom & Responsive Designs</h4>
               <p className="mt-2 text-gray-400">
                 Tailored designs crafted to match your brand identity, ensuring a responsive and seamless user experience across all devices.
               </p>
@@ -216,27 +205,12 @@ function Services(){
           <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-bookmark-plus"
-                >
-                  <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-                  <line x1="12" x2="12" y1="7" y2="13" />
-                  <line x1="15" x2="9" y1="10" y2="10" />
-                </svg>
+              <div className="flex items-center justify-center rounded-md text-gray-300">
+             <TbSeo className='w-10 h-10'/>
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium text-gray-200">SEO Optimization</h4>
+              <h4 className="text-lg font-medium text-gray-300">SEO Optimization</h4>
               <p className="mt-2 text-gray-400">
                 Increase visibility with SEO-focused development, optimizing site structure, speed, and content for higher rankings and user engagement.
               </p>
@@ -246,26 +220,12 @@ function Services(){
           <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-video"
-                >
-                  <path d="m22 8-6 4 6 4V8Z" />
-                  <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
-                </svg>
+              <div className="flex items-center justify-center  rounded-md text-gray-300">
+         <TbBrandReactNative className='w-10 h-10'/>
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium text-gray-200">Native & Cross-Platform App Development</h4>
+              <h4 className="text-lg font-medium text-gray-300">Native & Cross-Platform App Development</h4>
               <p className="mt-2 text-gray-400">
                 Delivering native and cross-platform apps with intuitive interfaces, optimized for both iOS and Android.
               </p>
@@ -275,27 +235,12 @@ function Services(){
           <Reveal>
           <div className="flex">
             <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-file-question"
-                >
-                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                  <path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2" />
-                  <path d="M12 17h.01" />
-                </svg>
+              <div className="flex items-center justify-center rounded-md text-gray-300">
+                <FaTools className=' w-10 h-10' />
               </div>
             </div>
             <div className="ml-4">
-              <h4 className="text-lg font-medium text-gray-200">Wide Range of Development Tools & Languages</h4>
+              <h4 className="text-lg font-medium text-gray-300">Wide Range of Development Tools & Languages</h4>
               <p className="mt-2 text-gray-400">
                 Proficiency in modern tech stacks like React, Vue, Node.js, and Python, ensuring robust, scalable, and high-performance solutions.
               </p>

@@ -120,9 +120,11 @@ function Home() {
 
         {/* Contact Button */}
         <div className="mt-6">
-          <button className="outline-none bg-blue-700 text-white text-center px-4 py-3 rounded-xl shadow w-full md:w-auto hover:bg-blue-600">
-            Contact Us
+        <Link to='/works'>
+          <button  className="outline-none bg-blue-700 text-white text-center px-4 py-3 rounded-xl shadow w-full md:w-auto hover:bg-blue-600">
+           View Works
           </button>
+          </Link>
         </div>
       </div>
 
