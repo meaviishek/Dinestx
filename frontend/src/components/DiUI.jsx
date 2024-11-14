@@ -1,7 +1,12 @@
-import React from 'react'
-import { Terminal } from '.'
+import React from 'react';
 
 function DiUI() {
-  }
-  
-  export default DiUI
+  return (
+    <div className='w-full h-full align-middle'>
+      <span style={{fontSize:16, color:'red' }}>Helo</span> 
+
+    </div>
+  );
+}
+
+export default DiUI;

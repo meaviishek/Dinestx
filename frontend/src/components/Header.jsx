@@ -95,14 +95,12 @@ function Header() {
     className="fixed inset-x-0 bottom-0 md:top-4 lg:top-4 z-40 mx-auto w-full bg-white/20 py-3 shadow backdrop-blur-md md:rounded-3xl lg:max-w-screen-lg md:bottom-auto">
     <div className="px-4">
         <div className="flex items-center justify-between">
-        <Reveal>
             <div className="flex shrink-0">
                 <a aria-current="page" className="flex items-center" href="/">
                     <img className="h-10 w-auto object-fit: cover" src={Logo} alt=""/>
                     <p className="sr-only">Website Title</p>
                 </a>
             </div>
-            </Reveal>
             <nav className="flex md:items-center md:justify-center md:gap-5 font-sans">
                 <NavLink to='/' aria-current="page"
                     className={({isActive} )=>`relative mx-2 text-gray-800 font-semibold hover:after:block transition-all duration-300 ${isActive ? 'after:flex after:translate-y-0' : 'after:hidden after:translate-y-2'} 

@@ -105,16 +105,18 @@ function Home() {
   />
 </div>
 <Reveal>
-  <section className="flex lg:mt-28 justify-center items-center  max-w-screen-xl pb-4  mx-auto animate-fadeIn">
-    <div className="flex flex-wrap md:flex-nowrap w-full md:space-x-4">
+  <section className="flex lg:mt-16  max-w-screen-xl pb-4  mx-auto animate-fadeIn">
+    <div className="flex flex-wrap md:flex-nowrap w-full md:space-x-4 justify-center items-center ">
       
       {/* Text Section */}
       <div className="flex-1 sm:text-center md:text-left w-full md:w-1/2 space-y-4">
         <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
           Elevate Your Brand with
-          <span className="text-indigo-600"> Our Digital Solutions</span>
         </h1>
-        <p className="text-gray-600 max-w-xl text-xl leading-relaxed sm:mx-auto md:mx-0">
+        <h1 className="text-indigo-600 font-bold text-4xl xl:text-5xl">
+          Our Digital Solutions
+        </h1>
+        <p className="text-gray-600 max-w-xl text-lg leading-relaxed sm:mx-auto md:mx-0">
           Your one-stop agency for Website and App Development, SEO, Graphic Design, and Social Media Management. Let us drive your digital success.
         </p>
 
@@ -128,9 +130,10 @@ function Home() {
 
       {/* Terminal Section */}
       
-      <div className="flex-1 w-full md:w-1/2 relative mt-20 md:mt-0">
+      <div className="flex-1 w-full md:w-1/2 relative">
       
         {/* Terminal Component */}
+        
         <Terminal />
 
         {/* Arrow and Message */}

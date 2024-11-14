@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import {Home,Joinus,Services, Works} from "./components/index.js"
+import {Home,Joinus,Services, Works, DiUI} from "./components/index.js"
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const router=createBrowserRouter(
@@ -13,6 +13,7 @@ const router=createBrowserRouter(
       <Route path='/' element={<App/>}>
       <Route path='' element={<Home/>}/>
       <Route path='services' element={<Services/>}/>
+      <Route path='DiUI' element={<DiUI/>}/>
       <Route path='works'  element={<Works/>}/>
       <Route path='joinus' element={<Joinus/>}/>
       </Route>
