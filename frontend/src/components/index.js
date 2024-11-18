@@ -5,6 +5,7 @@ import Blogs from "./Blogs";
 import About from "./About";
 import Services from "./Services";
 import Works from "./Works";
+import DiUI from "./DiUI";
 import Joinus from "./Joinus";
 import Logo from '../assets/Logo.png'
 import Floating from "./Floating";
@@ -19,5 +20,5 @@ import web from  '../assets/web-p.png'
 
 
 export{
-    Header,Footer,Joinus,Blogs,Home,About,Services,Works,Logo,Floating, Terminal,Website,social,graphics,app,graphics1,seo,web
+    Header,Footer,Joinus,Blogs,Home,About,Services,Works,Logo,Floating, Terminal,Website,social,graphics,app,graphics1,seo,web, DiUI,
 }
